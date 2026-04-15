@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: application-deploymnet
+   labels:
+     app: test
+
+spec:
+  replicas: 3
+
+  strategy:
+  type: RollingUpdate
+  rollingUpdate:
+    maxUnavailable: 1 
+    maxSurge: 1
+  
+  selector:
+    matchLabels:
+       app: jar
+
+  template:
+    metadata:
+      labels:
+        app: jar
+
+    spec:
+      containers:
+        - name: spring-containers
+          image:  889526028404.dkr.ecr.ap-south-2.amazonaws.com/ecr-devops:v2 
+          ports:
+           - containerPort: 8080
