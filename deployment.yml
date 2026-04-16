@@ -26,6 +26,6 @@ spec:
     spec:
       containers:
         - name: spring-containers
-          image:  889526028404.dkr.ecr.ap-south-2.amazonaws.com/ecr-private-repo:tag_one
+          image:  889526028404.dkr.ecr.ap-south-2.amazonaws.com/ecr-private-repo:V2
           ports:
            - containerPort: 8080
